@@ -23,10 +23,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <header style={{ marginBottom: 60 }} className="App-header">
+          <img style={{ marginTop: 30 }} src={logo} className="App-logo" alt="logo" />
         </header>
-        <h1>Nova Credit Dashboard</h1>
 
         {reports.length > 0 ? <SimpleTable reports={this.props.reports} /> : <Loading />}
 
@@ -36,16 +35,16 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   reports: state.reports.reports,
   count: state.reports.count,
 });
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchReports,
     },
     dispatch
   );
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -11,7 +11,7 @@ const TABLE_CELLS = ['Id', 'Score', 'First Name', 'Last Name', 'DOB', 'SSN', 'Re
 
 const SimpleTable = ({ reports }) => {
   return (
-    <Paper>
+    <Paper style={{ width: '80%', margin: 'auto', boxShadow: 'rgba(0, 0, 0, 0.3) 0 0.8rem 3rem' }}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -23,7 +23,7 @@ const SimpleTable = ({ reports }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {reports.map(report => (
+          {reports.map((report) => (
             <TableRow key={report.id}>
               <TableCell align="right">{report.id}</TableCell>
               <TableCell align="right">{report.score}</TableCell>
